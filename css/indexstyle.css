@@ -1,0 +1,110 @@
+html, body{
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: transparent;
+    overflow: hidden;
+    padding: 0%;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+  }
+  
+/* Style the links inside the navigation bar */
+.topnav a {
+  margin-left: 0.5%;
+  margin-top: 0.3%;
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 17px;
+  padding-bottom: 1.5%;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  text-decoration: underline;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  color: rgb(106, 224, 112)
+}
+
+#slideshow{
+  width: 100%;
+  float: top;
+  position: relative;
+}
+
+.name{
+  float: right;
+  margin-top: 4%;
+  margin-left: 25%;
+  margin-top: -23%;
+  
+}
+
+.navbutton{
+  padding: 0%;
+  height: 5%;
+  width: 2.3%;
+  margin-left: 20%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-radius: 120%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top:  50%;
+  left: -18.5%;
+}
+
+.navbutton2{
+  padding: 0%;
+  height: 5%;
+  width: 2.3%;
+  margin-left: 20%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-radius: 120%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top:  47.5%;
+  right: 0%;
+  -moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.navbutton:hover{
+  background-color: rgba(179, 179, 179, 0.50);
+  cursor: hand;
+}
+
+.navbutton2:hover{
+  background-color: rgba(179, 179, 179, 0.50);
+  cursor: hand;
+}
+
+.navbuttonimg{
+  width: 30px;
+  padding: 0%;
+  margin-right: 10%; 
+}
+
+#learnContainer{
+  margin-top: 10%;
+  position: relative;
+}

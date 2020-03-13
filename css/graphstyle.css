@@ -1,0 +1,57 @@
+html, body{
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: transparent;
+    overflow: hidden;
+    padding: 0%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+/* Style the links inside the navigation bar */
+.topnav a {
+  margin-left: 0.5%;
+  margin-top: 0.3%;
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 17px;
+  padding-bottom: 1.5%;
+  position: relative;
+  top: 0;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  text-decoration: underline;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  color: rgb(106, 224, 112)
+}
+
+#slideshow{
+  width: 100%;
+  float: top;
+  top: 0;
+  position: fixed
+}
+
+.name{
+  float: right;
+  margin-top: 4%;
+  margin-left: 25%;
+  margin-top: -23%;
+  
+}
