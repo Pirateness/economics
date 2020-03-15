@@ -1,0 +1,183 @@
+<!DOCTYPE html5>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/tariffstyle.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tariffs</title>
+</head>
+
+
+<body>
+    <div>
+        <div class="topnav">
+            <a href="index.html">Home</a>
+            <a class="active">Tariffs</a>
+            <a href="graphanalysis.html">Graph Analysis</a>
+            <a href="quotas.html">Quotas</a>
+            <a><button onclick="myFunction()">Toggle dark mode</button></a>
+          </div>
+        
+        <h1 id="header">Tariffs</h1>
+        <!--<h2>A comprehensive analysis by Jozef Kowalski & Samuel Mercer</h2>-->
+
+        <p class="main">Australia has a long history of protection in the manufacturing sector where tariffs, quotas and subsidies have been used to shield domestic firms and industry from more efficient import competition.</p>
+    
+        <h3 class="main">Australia's Tariff Trends</h3>
+    
+        <p class="main">
+            Australia's tariff rate fell sharply in 2009-10, and continued to steadily decrease, as illustrated in the graph below. This is likely due to Australia becoming more focused on free-trade rather than protectionism.
+            <br><br>Australia currently has six free trade agreements (FTAs) with other countries in force and eight which are under negotiation. The FTAs contain legally binding commitments by each member to liberalise access to their markets for goods and services as well as investment.
+        </p>
+    
+        <div style="height: 40%; width: 60%">
+            <canvas id="myChart"></canvas>
+          </div>
+    
+        <p class="main">
+            Australia has commitments under the World Trade Organisation (WTO) on tariffs and tariff quotas, export subsidies and domestic support for agricultural products.<br><br>
+            Goods imported in Australia require classification. Declaration procedures are based on self-assessment by importers. Declarations must be made to the Australian Border Force, which also enforces import restrictions.
+        </p>
+    </div>
+    
+    <button id="collapsiblebutton" type="button" class="collapsible"><img src="imgs/leftarrow.svg"></button>
+    <div id="rightpanel" class="content">
+        <h2 style="margin-top: 5%;">Key Concepts</h2>
+        <h3>Tariff:</h3>
+        <p>A tariff is a tax on imports or exports between sovereign states. It is a form of regulation of foreign trade and a policy that taxes foreign products to encourage or safeguard domestic industry. Traditionally, states have used them as a source of income.</p>
+        <h3>Tariff Quota:</h3>
+        <p>A tariff quota permits the import of a certain quantity of a commodity duty-free or at a lower duty rate, while quantities exceeding the quota are subject to a higher duty rate.</p>
+        <h3>Export subsidy</h3>
+        <p>Export subsidy is a government policy to encourage export of goods and discourage sale of goods on the domestic market through direct payments, low-cost loans, tax relief for exporters, or government-financed international advertising.</p>
+        <h3>Gross Value Added (GVA)</h3>
+        <p>Is the measure of the value of goods and services produced in an area, industry or sector of an economy.</p>
+    </div>
+    
+    <h3 class="main" style="margin-top: 2%;">Tariff Reforms</h3>
+
+    <p class="main">Tariff reforms, beginning in the late 1980s, were among the
+        first policies introduced during this second wave. Government policy was to regularly and
+        systematically reduce tariffs across the board, with differential rates of reduction depending on
+        pre-existing tariff levels. Effective tariff rates have steadily declined from around 10 per cent in the late 1980s to around 2 per cent today (Chart 5).</p>
+    <div>
+        <img style="margin-top: 1%; margin-left: 3%;" src="imgs/chart5.png">
+        <img style="margin-top: 1%; margin-left: 3%;" src="imgs/chart6.png">
+    </div>
+    <p class="main" style="margin-top: 1.5%;">
+        Even a severe recession in the early 1990s did not
+        slow progress. Some industries received support to help with the costs of transitioning to the new
+        environment, especially when the cuts were first announced. While most assistance packages were
+        small and lasted only a few years, some industries – notably passenger motor vehicles (PMV) and
+        textiles, clothing and footwear (TCF), both of which had very high effective tariff rates – received
+        government support for a lengthy period. Indeed, TCF retains some tariff protection to this day.
+    </p>
+    <p class="main" style="margin-top: 2%;">
+        The tariff reductions meant the Australian economy was better placed to exploit its comparative
+        advantage, which is in sectors such as mining and agriculture rather than in manufacturing.
+        3 The
+        reduction in protection contributed to the decline in manufacturing’s share of output from around
+        13 per cent of GDP in the late 1980s to around 6 per cent more recently (Chart 6). But while
+        manufacturing employment declined through this period, real output in the sector steadily increased
+        before peaking in the late 2000s. Yet as the government argued at the time, tariff cuts would
+        eventually deliver net gains to the economy. Job losses in declining industries would be more than
+        offset by gains elsewhere, including in trade-exposed industries benefiting from cheaper input costs
+        and through wider job opportunities that stronger economic growth would provide.<br><br></p>
+
+<script>
+    function myFunction() {
+       var element = document.body;
+       element.classList.toggle("dark-mode");
+    }
+</script>
+
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+          document.getElementById("collapsiblebutton").style.marginRight = "0%";
+        } else {
+          document.getElementById("collapsiblebutton").style.marginRight = "21.8%";
+          content.style.display = "block";
+        }
+      });
+    }
+    </script>
+
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    ctx.height = 500;
+    ctx.width = 200;
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['2006', '2008', '2010', '2012', '2014', '2016', '2018'],
+            datasets: [{
+                label: 'Tariff Rate, Applied, Simple Mean, All Products',
+                data: [3.91, 4.06, 2.825, 2.76, 2.84, 2.3, 2.23],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(212, 57, 207, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(212, 57, 207, 1)',
+                ],
+                borderWidth: 1
+            },
+            {
+            label: 'Line of best fit',
+            data: [3.91, 3.63, 3.35, 3.07, 2.79, 2.51, 2.23],
+
+            // Changes this dataset to become a line
+            type: 'line',
+            backgroundColor: [
+                    'rgba(255, 99, 132, 0)',
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                ],
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            labelString: "Australia's Tariff Rate",
+            display: true,
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    },
+                    scaleLabel: {
+                        display: true,
+                        labelString: '% (Tariff Rate)'
+                    }
+                }],
+                xAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Year'
+                    }
+                }]
+            }
+        }
+    });
+    </script>
+</body>
+</html>
